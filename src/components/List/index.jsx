@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { ReactSortable } from "react-sortablejs";
+import { ListTeachersContainer, TeacherCard, TeacherList } from "./style";
 
 export const List = () =>{
 
@@ -31,21 +32,20 @@ export const List = () =>{
     ]);
 
     return(
-        <div className="lista" >
-            <h2>List...</h2>
-            <ul>
+        <ListTeachersContainer>
+            <TeacherList>
                 <ReactSortable list={maestros} setList={setMaestros} multiDrag group='schedule' >
                     {
                         maestros.map((item, i)=>(
-                            <li key={`${item.name}-${i}`} >
+                            <TeacherCard key={`${item.name}-${i}`} >
                                 <h2>{item.subject}</h2>
                                 <h3>{item.name}</h3>
                                 <h3>{item.classroom}</h3>
-                            </li>
+                            </TeacherCard>
                         ))
                     }
                 </ReactSortable>
-            </ul>
-        </div>
+            </TeacherList>
+        </ListTeachersContainer>
     )
 }
