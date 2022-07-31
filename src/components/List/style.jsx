@@ -13,9 +13,17 @@ export const TeacherList = styled.ul`
 
 export const TeacherCard = styled.li`
     width: 100%;
-    margin-bottom: 10px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 5px;
+    margin-bottom: 10px;
     border-radius: 5px;
-    background: teal;
+    background: ${(props)=> props.bg ? props.bg : 'teal'};
     cursor: grab;
+
+    &:active{
+        margin: 0;
+    }
 `;
