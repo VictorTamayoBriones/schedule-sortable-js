@@ -3,10 +3,12 @@ import styled from 'styled-components';
 export const ScheduleContainer = styled.section`
     width: 80%;
     overflow: scroll;
+    display: flex;
+    justify-content: space-between;
 `;
 
 export const Days = styled.div`
-    width: 100%;
+    width: 90%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     ul{
